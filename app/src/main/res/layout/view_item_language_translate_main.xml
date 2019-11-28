@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:orientation="horizontal"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        >
+
+    <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/shape_loyout_half_left_radius"
+            android:gravity="center"
+            >
+        <com.intellidev.keepwords.customviews.CustomeFontTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:custom_font="@string/font_name_helvatica_bold"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:padding="5dp"
+                android:text="German"
+                />
+    </LinearLayout>
+
+    <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_keyboard_arrow_right"
+            />
+    <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/shape_layout_half_right_radius"
+            android:gravity="center"
+            >
+        <com.intellidev.keepwords.customviews.CustomeFontTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:custom_font="@string/font_name_helvatica_bold"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:padding="5dp"
+                android:text="English"
+                />
+    </LinearLayout>
+
+</LinearLayout>
