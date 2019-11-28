@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                tools:background="#fafafa"
+                android:id="@+id/container">
+
+    <com.wang.avi.AVLoadingIndicatorView
+            android:id="@+id/avi_loading_more"
+            style="@style/AVLoadingIndicatorView"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            app:indicatorColor="@color/jungle_green"
+            app:indicatorName="BallPulseIndicator"
+            android:layout_gravity="center"
+            android:layout_centerInParent="true"
+    />
+
+    <LinearLayout
+            android:id="@+id/loadmore_errorlayout"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            tools:visibility="visible"
+            android:gravity="center"
+    >
+
+
+        <LinearLayout
+                android:id="@+id/btn_try_again"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/oval_gradient_vertical"
+                android:gravity="center"
+                android:soundEffectsEnabled="false"
+        >
+
+            <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/ico_reload_white"
+            />
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+</RelativeLayout>

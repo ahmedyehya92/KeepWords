@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:id="@+id/lout_main"
+>
+
+    <RelativeLayout
+            android:id="@+id/lout_colored"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/black"
+            android:alpha="0.7"
+            android:visibility="gone"
+    />
+
+    <LinearLayout
+            android:id="@+id/lout_loading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:orientation="vertical"
+            android:visibility="gone"
+    >
+
+        <com.wang.avi.AVLoadingIndicatorView
+                android:id="@+id/avi_loading_profile_image"
+                style="@style/AVLoadingIndicatorView"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                app:indicatorColor="@color/jungle_green"
+                app:indicatorName="BallPulseIndicator"
+        />
+
+        <com.intellidev.keepwords.customviews.CustomeFontTextView
+                android:id="@+id/tv_loading_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:custom_font="@string/font_name_helvatica"
+                android:textColor="@color/white"/>
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+            android:id="@+id/lout_error_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:visibility="gone"
+    >
+
+        <LinearLayout
+                android:id="@+id/btn_try_again"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:background="@drawable/oval_gradient_vertical"
+                android:gravity="center"
+                android:soundEffectsEnabled="false"
+        >
+
+            <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/ico_reload_white"
+            />
+
+        </LinearLayout>
+
+
+        <com.intellidev.keepwords.customviews.CustomeFontTextView
+                android:id="@+id/tv_error_message"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:custom_font="@string/font_name_helvatica"
+                tools:text="@string/unknown_error"
+        />
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+            android:id="@+id/lout_done_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:visibility="gone"
+
+    >
+
+        <LinearLayout
+                android:id="@+id/bg_done_layout"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:background="@drawable/oval_gradient_vertical"
+                android:gravity="center"
+                android:soundEffectsEnabled="false"
+        >
+
+            <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/ic_done_white"
+            />
+
+        </LinearLayout>
+
+
+        <com.intellidev.keepwords.customviews.CustomeFontTextView
+                android:id="@+id/tv_done_message"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:custom_font="@string/font_name_helvatica"
+                tools:text="@string/unknown_error"
+        />
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+            android:id="@+id/lout_custom_state_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:visibility="gone"
+    >
+
+        <ImageView
+                android:id="@+id/im_custom_state_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+        />
+
+
+
+
+
+        <com.intellidev.keepwords.customviews.CustomeFontTextView
+                android:id="@+id/tv_custom_state_message"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:custom_font="@string/font_name_helvatica"
+                tools:text="@string/unknown_error"
+        />
+
+
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+            android:id="@+id/lout_empty_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:visibility="gone"
+    >
+
+        <ImageView
+                android:id="@+id/im_empty_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:src="@drawable/error_copy"
+        />
+
+
+
+
+
+        <com.intellidev.keepwords.customviews.CustomeFontTextView
+                android:id="@+id/tv_empty_message"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:custom_font="@string/font_name_helvatica"
+                tools:text="@string/unknown_error"
+        />
+
+
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>

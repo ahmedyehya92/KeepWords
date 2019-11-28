@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <item
+            android:id="@+id/close"
+            android:title="X"
+    />
+
+    <item
+            android:id="@+id/search_event"
+            android:title="@string/menu_item_search_event" />
+    <item
+            android:id="@+id/go_backend"
+            android:title="@string/menu_item_go_backend" />
+    <item
+            android:id="@+id/logout"
+            android:title="@string/menu_item_logout" />
+
+</menu>
