@@ -22,6 +22,24 @@ data class Response<T>(
 )
 
 
+data class WordTranslationsList (
+    val id: Long,
+    val translateFrom: String,
+    val translateTo: String,
+    val targetLanguageSymbol: String,
+    val words: MutableList<WordTranslation>,
+    var selected: Boolean = false
+
+)
+
+data class WordTranslation (
+    val id: Long,
+    val word: String,
+    val targetLanguage: String,
+    val translation: String
+)
+
+
 data class Pagination(
     val current: Int,
     val currentItemCount: Int,

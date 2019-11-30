@@ -12,5 +12,7 @@
     <color name="black_text">#212121</color>
     <color name="very_light_pink">#f4f2f2</color>
     <color name="blue">#519CAC</color>
+    <color name="light_blue">#ABCCD2</color>
+    <color name="more_blue">#044D67</color>
 
 </resources>

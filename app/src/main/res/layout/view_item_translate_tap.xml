@@ -11,18 +11,21 @@
         >
 
     <LinearLayout
+            android:id="@+id/lout_translate_from"
             android:layout_width="100dp"
             android:layout_height="50dp"
-            android:background="@drawable/shape__layout_half_top_radius"
+            android:background="@drawable/shape_layout_half_top_radius_deselected"
             android:gravity="center"
             android:paddingStart="10dp"
             android:paddingEnd="10dp"
+
             >
         <com.intellidev.keepwords.customviews.CustomeFontTextView
+                android:id="@+id/tv_translate_from"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:custom_font="@string/font_name_helvatica_bold"
-                android:textColor="@color/white"
+                android:textColor="@color/more_blue"
                 android:text="German"
                 android:textSize="16dp"
                 />
@@ -36,16 +39,18 @@
             />
 
     <LinearLayout
+            android:id="@+id/lout_translate_to"
             android:layout_width="100dp"
             android:layout_height="50dp"
-            android:background="@drawable/shape__layout_half_bottom_radius"
+            android:background="@drawable/shape_layout_half_bottom_radius_deselected"
             android:gravity="center"
             >
         <com.intellidev.keepwords.customviews.CustomeFontTextView
+                android:id="@+id/tv_translate_to"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:custom_font="@string/font_name_helvatica_bold"
-                android:textColor="@color/white"
+                android:textColor="@color/more_blue"
                 android:text="English"
                 android:paddingEnd="10dp"
                 android:paddingStart="10dp"
