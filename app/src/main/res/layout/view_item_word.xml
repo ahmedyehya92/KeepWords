@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/lout_container"
+        >
+
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="15dp"
+            android:gravity="center_vertical"
+            >
+
+        <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight="1"
+                >
+
+            <com.intellidev.keepwords.customviews.CustomeFontTextView
+                    android:id="@+id/tv_word_translate_from"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:custom_font="@string/font_name_helvatica_bold"
+                    android:textColor="#363B3B"
+                    android:text="Book"
+                    />
+
+            <com.intellidev.keepwords.customviews.CustomeFontTextView
+                    android:id="@+id/tv_word_translate_to"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:custom_font="@string/font_name_helvatica_bold"
+                    android:textColor="@color/blue"
+                    android:text="Book Book Book Book, Book, Book Book Book Book Book Book boo"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:layout_marginEnd="16dp"
+                    />
+
+        </LinearLayout>
+
+        <ImageView
+                android:id="@+id/btn_delete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_delete_forever_black_24dp"
+                />
+
+    </LinearLayout>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#BCBAC3" />
+
+</LinearLayout>

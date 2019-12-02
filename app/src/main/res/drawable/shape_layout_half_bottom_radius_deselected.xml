@@ -4,7 +4,7 @@
             android:color="@color/light_blue"
             />
     <corners
-            android:bottomLeftRadius="40dp"
-            android:bottomRightRadius="40dp"
+            android:bottomLeftRadius="80dp"
+            android:bottomRightRadius="80dp"
             />
 </shape>

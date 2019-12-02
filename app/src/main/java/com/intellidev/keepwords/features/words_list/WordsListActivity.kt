@@ -12,12 +12,33 @@ class WordsListActivity : AppCompatActivity() {
 
     val translationsList: MutableList<WordTranslationsList> = ArrayList()
     var adapterTranslationsListViewPager: AdapterTranslationsListViewPager? = null
+    val wordsList: MutableList<WordTranslation> = ArrayList()
+    lateinit var adapter: AdapterWordsList
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_words_list)
 
-        val wordsList: MutableList<WordTranslation> = ArrayList()
+        wordsList.add(WordTranslation(1L,"book", "en", "book"))
+        wordsList.add(WordTranslation(1L,"book", "en", "book"))
+        wordsList.add(WordTranslation(1L,"book", "en", "book"))
+        wordsList.add(WordTranslation(1L,"book", "en", "book"))
+        wordsList.add(WordTranslation(1L,"book", "en", "book"))
+        wordsList.add(WordTranslation(1L,"book", "en", "book"))
+        wordsList.add(WordTranslation(1L,"book", "en", "book"))
+        wordsList.add(WordTranslation(1L,"book", "en", "book"))
+        wordsList.add(WordTranslation(1L,"book", "en", "book"))
+        wordsList.add(WordTranslation(1L,"book", "en", "book"))
+        wordsList.add(WordTranslation(1L,"book", "en", "book"))
+        wordsList.add(WordTranslation(1L,"book", "en", "book"))
+        wordsList.add(WordTranslation(1L,"book", "en", "book"))
+        wordsList.add(WordTranslation(1L,"book", "en", "book"))
+        wordsList.add(WordTranslation(1L,"book", "en", "book"))
+        wordsList.add(WordTranslation(1L,"book", "en", "book"))
+        wordsList.add(WordTranslation(1L,"book", "en", "book"))
+        wordsList.add(WordTranslation(1L,"book", "en", "book"))
+        wordsList.add(WordTranslation(1L,"book", "en", "book"))
+        wordsList.add(WordTranslation(1L,"book", "en", "book"))
         wordsList.add(WordTranslation(1L,"book", "en", "book"))
 
         translationsList.add(WordTranslationsList(1L,"German", "English", "en",wordsList))
