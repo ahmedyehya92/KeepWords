@@ -3,6 +3,7 @@ package com.intellidev.entities
 import android.arch.persistence.room.Entity
 import android.arch.persistence.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
 data class LoginFields(
     val username: String,
@@ -30,14 +31,18 @@ data class WordTranslationsList (
     val words: MutableList<WordTranslation>,
     var selected: Boolean = false
 
-)
+):Serializable
+
+data class Translations(
+    val translationsList: MutableList<WordTranslationsList>
+):Serializable
 
 data class WordTranslation (
     val id: Long,
     val word: String,
     val targetLanguage: String,
     val translation: String
-)
+):Serializable
 
 
 data class Pagination(
@@ -105,6 +110,8 @@ const val LOGIN_SCREEN = 100
 const val EVENTS_SEARCH_SCREEN = 101
 const val SEATS_SCREEN = 102
 
+const val KEY_POSITION ="KEY_POSITION"
+const val KEY_TRANSLATIONS_DATA = "KEY_TRANSLATIONS_DATA"
 
 //for SharedPreference
 const val PREF_KEY_LOGGEDIN = "PREF_KEY_LOGGEDIN"

@@ -1,10 +1,12 @@
 package com.intellidev.keepwords.features.words_list
 
+import android.content.Context
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v4.view.ViewPager
-import com.intellidev.entities.WordTranslation
-import com.intellidev.entities.WordTranslationsList
+import android.util.Log
+import com.intellidev.entities.*
 import com.intellidev.keepwords.R
 import kotlinx.android.synthetic.main.activity_words_list.*
 
@@ -15,54 +17,23 @@ class WordsListActivity : AppCompatActivity() {
     val wordsList: MutableList<WordTranslation> = ArrayList()
     lateinit var adapter: AdapterWordsList
 
+    companion object {
+        fun instaniateIntent(context: Context, position: Int, translations: Translations): Intent
+        {
+            return Intent(context, WordsListActivity::class.java).apply {
+                this.putExtra(KEY_POSITION, position)
+                this.putExtra(KEY_TRANSLATIONS_DATA, translations)
+            }
+        }
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_words_list)
 
-        wordsList.add(WordTranslation(1L,"book", "en", "book"))
-        wordsList.add(WordTranslation(1L,"book", "en", "book"))
-        wordsList.add(WordTranslation(1L,"book", "en", "book"))
-        wordsList.add(WordTranslation(1L,"book", "en", "book"))
-        wordsList.add(WordTranslation(1L,"book", "en", "book"))
-        wordsList.add(WordTranslation(1L,"book", "en", "book"))
-        wordsList.add(WordTranslation(1L,"book", "en", "book"))
-        wordsList.add(WordTranslation(1L,"book", "en", "book"))
-        wordsList.add(WordTranslation(1L,"book", "en", "book"))
-        wordsList.add(WordTranslation(1L,"book", "en", "book"))
-        wordsList.add(WordTranslation(1L,"book", "en", "book"))
-        wordsList.add(WordTranslation(1L,"book", "en", "book"))
-        wordsList.add(WordTranslation(1L,"book", "en", "book"))
-        wordsList.add(WordTranslation(1L,"book", "en", "book"))
-        wordsList.add(WordTranslation(1L,"book", "en", "book"))
-        wordsList.add(WordTranslation(1L,"book", "en", "book"))
-        wordsList.add(WordTranslation(1L,"book", "en", "book"))
-        wordsList.add(WordTranslation(1L,"book", "en", "book"))
-        wordsList.add(WordTranslation(1L,"book", "en", "book"))
-        wordsList.add(WordTranslation(1L,"book", "en", "book"))
-        wordsList.add(WordTranslation(1L,"book", "en", "book"))
+        initTranslationsSlider((intent.getSerializableExtra(KEY_TRANSLATIONS_DATA) as Translations).translationsList)
 
-        translationsList.add(WordTranslationsList(1L,"German", "English", "en",wordsList))
-        translationsList.add(WordTranslationsList(1L,"German", "English", "en",wordsList))
-        translationsList.add(WordTranslationsList(1L,"German", "English", "en",wordsList))
-        translationsList.add(WordTranslationsList(1L,"German", "English", "en",wordsList))
-        translationsList.add(WordTranslationsList(1L,"German", "English", "en",wordsList))
-        translationsList.add(WordTranslationsList(1L,"German", "English", "en",wordsList))
-        translationsList.add(WordTranslationsList(1L,"German", "English", "en",wordsList))
-        translationsList.add(WordTranslationsList(1L,"German", "English", "en",wordsList))
-        translationsList.add(WordTranslationsList(1L,"German", "English", "en",wordsList))
-        translationsList.add(WordTranslationsList(1L,"German", "English", "en",wordsList))
-        translationsList.add(WordTranslationsList(1L,"German", "English", "en",wordsList))
-        translationsList.add(WordTranslationsList(1L,"German", "English", "en",wordsList))
-        translationsList.add(WordTranslationsList(1L,"German", "English", "en",wordsList))
-        translationsList.add(WordTranslationsList(1L,"German", "English", "en",wordsList))
-        translationsList.add(WordTranslationsList(1L,"German", "English", "en",wordsList))
-        translationsList.add(WordTranslationsList(1L,"German", "English", "en",wordsList))
-        translationsList.add(WordTranslationsList(1L,"German", "English", "en",wordsList))
-        translationsList.add(WordTranslationsList(1L,"German", "English", "en",wordsList))
-        translationsList.add(WordTranslationsList(1L,"German", "English", "en",wordsList))
-        translationsList.add(WordTranslationsList(1L,"German", "English", "en",wordsList))
-
-        initTranslationsSlider(translationsList)
+        page_slider.currentItem = intent.getIntExtra(KEY_POSITION,0)
 
     }
 
@@ -82,8 +53,7 @@ class WordsListActivity : AppCompatActivity() {
             }
 
             override fun onPageSelected(p0: Int) {
-                translationsList[p0].selected = true
-                makeAnotherTabsDeselected(p0)
+                adapterTranslationsListViewPager!!.selectPage(p0)
             }
 
         })

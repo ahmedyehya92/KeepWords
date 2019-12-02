@@ -65,6 +65,13 @@ class AdapterTranslationsListViewPager (
         return view
     }
 
+    fun selectPage(position: Int)
+    {
+        translationsList[position].selected = true
+        makeAnotherTabsDeselected(position)
+        notifyDataSetChanged()
+    }
+
     override fun getCount(): Int {
         return translationsList.size
     }
@@ -78,6 +85,14 @@ class AdapterTranslationsListViewPager (
     override fun destroyItem(container: ViewGroup, position: Int, `object`: Any) {
         val view = `object` as View
         container.removeView(view)
+    }
+
+    fun makeAnotherTabsDeselected(selectedPosition: Int)
+    {
+        translationsList.forEachIndexed { index, wordTranslationsList ->
+            if(index != selectedPosition)
+                wordTranslationsList.selected = false
+        }
     }
 
 }

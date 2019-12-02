@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -8,47 +8,65 @@
         android:layout_marginEnd="16dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
+        app:cardCornerRadius="25dp"
+        app:cardBackgroundColor="@color/blue"
         >
 
     <LinearLayout
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@drawable/shape_loyout_half_left_radius"
-            android:gravity="center"
+            android:padding="5dp"
+            android:gravity="center_vertical"
+            android:id="@+id/lout_container"
             >
-        <com.intellidev.keepwords.customviews.CustomeFontTextView
+        <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginStart="8dp"
+                >
+            <com.intellidev.keepwords.customviews.CustomeFontTextView
+                    android:id="@+id/tv_translate_from"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:custom_font="@string/font_name_helvatica_bold"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:padding="5dp"
+                    android:text="German"
+                    />
+
+            <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_keyboard_arrow_right_white_24dp"
+                    />
+
+            <com.intellidev.keepwords.customviews.CustomeFontTextView
+                    android:id="@+id/tv_translate_to"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:custom_font="@string/font_name_helvatica_bold"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:padding="5dp"
+                    android:text="English"
+                    />
+
+        </LinearLayout>
+
+        <ImageView
+                android:id="@+id/btn_delete"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:custom_font="@string/font_name_helvatica_bold"
-                android:textColor="@color/white"
-                android:textSize="16sp"
-                android:padding="5dp"
-                android:text="German"
+                android:src="@drawable/ic_delete_sweep_black_24dp"
+                android:layout_marginEnd="4dp"
                 />
+
     </LinearLayout>
 
-    <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_keyboard_arrow_right"
-            />
-    <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@drawable/shape_layout_half_right_radius"
-            android:gravity="center"
-            >
-        <com.intellidev.keepwords.customviews.CustomeFontTextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:custom_font="@string/font_name_helvatica_bold"
-                android:textColor="@color/white"
-                android:textSize="16sp"
-                android:padding="5dp"
-                android:text="English"
-                />
-    </LinearLayout>
 
-</LinearLayout>
+
+</android.support.v7.widget.CardView>
